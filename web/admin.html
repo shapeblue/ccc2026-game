@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin · CloudStack Card Clash</title>
+<link rel="stylesheet" href="/style.css">
+<style>
+  .row { display: flex; gap: 0.7rem; flex-wrap: wrap; align-items: end; margin: 1rem 0; }
+  .row .field { margin: 0; min-width: 14rem; }
+  .panel { background: var(--panel); border: 1.5px solid var(--line); border-radius: 10px; padding: 1.2rem; margin-bottom: 1.2rem; }
+  .table-wrap { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.92rem; }
+  th, td { text-align: left; padding: 0.45rem 0.6rem; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  th { font-family: var(--display); font-size: 1rem; }
+  .winner { font: 700 2rem var(--display); margin: 0.5rem 0 0; }
+  td button { padding: 0.2em 0.7em; font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<div class="shell">
+  <header class="masthead"><div class="wordmark">Card Clash admin</div><a href="/leaderboard">Open leaderboard</a></header>
+
+  <form class="panel" id="login">
+    <h2>Enter the admin PIN</h2>
+    <p class="muted">It's printed in the terminal when the server starts.</p>
+    <div class="row"><div class="field"><label for="pin">PIN</label><input id="pin" inputmode="numeric" autocomplete="off"></div><button>Unlock</button></div>
+    <p class="error" id="login-error"></p>
+  </form>
+
+  <div id="app" class="hidden">
+    <section class="panel">
+      <h2>Prize draw</h2>
+      <p class="muted">Picks a random player who has finished at least one game and hasn't won a prize yet. For top-score prizes, award from the table below.</p>
+      <div class="row">
+        <label class="check"><input type="checkbox" id="today-only"> Only players who played today</label>
+        <button id="btn-draw">Draw a winner</button>
+      </div>
+      <div id="draw-result"></div>
+    </section>
+
+    <section class="panel">
+      <div class="row" style="justify-content:space-between;margin-top:0">
+        <h2 id="count">Players</h2>
+        <div class="row" style="margin:0">
+          <button class="secondary" id="btn-csv-all">Export all players</button>
+          <button class="secondary" id="btn-csv-updates">Export news opt-ins only</button>
+        </div>
+      </div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Best score</th><th>Rounds played</th><th>Left today</th><th>Leaderboard name</th><th>Full name</th><th>Email</th><th>Company</th><th>Role</th><th>News</th><th>Prize</th><th></th><th></th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table></div>
+    </section>
+
+    <section class="panel">
+      <h2>End of event</h2>
+      <p class="muted">Export what you need first. This permanently deletes every player and score.</p>
+      <div class="row"><div class="field"><label for="confirm">Type DELETE to confirm</label><input id="confirm" autocomplete="off"></div><button class="secondary" id="btn-reset">Delete all data</button></div>
+      <p class="error" id="reset-msg"></p>
+    </section>
+  </div>
+</div>
+<script>
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+let PIN = sessionStorage.getItem("cc_pin") || "";
+
+async function api(path, body) {
+  const res = await fetch(path, { method: body ? "POST" : "GET", headers: { "X-Admin-Pin": PIN, "Content-Type": "application/json" }, body: body ? JSON.stringify(body) : undefined });
+  if (res.status === 401) { sessionStorage.removeItem("cc_pin"); throw new Error("Wrong PIN. Check the terminal where the server is running."); }
+  if (!res.ok) throw new Error((await res.json().catch(() => ({}))).error || `Request failed (${res.status})`);
+  return res;
+}
+
+async function load() {
+  const players = await (await api("/api/admin/players")).json();
+  $("count").textContent = `Players (${players.length})`;
+  $("rows").innerHTML = players.map((p) => `<tr>
+    <td>${p.best ?? ""}</td><td>${p.games}</td><td>${p.rounds_left}</td><td>${esc(p.nickname)}</td><td>${esc(p.full_name)}</td>
+    <td>${esc(p.email)}</td><td>${esc(p.company)}</td><td>${esc(p.role)}</td><td>${p.consent_updates ? "Yes" : "No"}</td>
+    <td>${esc(p.prize)}</td><td><button class="secondary" data-award="${p.id}">${p.prize ? "Change prize" : "Award prize"}</button></td>
+    <td><button class="secondary" data-bonus="${p.id}">Give 5 more rounds today</button></td></tr>`).join("");
+}
+
+async function unlock() {
+  await load();
+  sessionStorage.setItem("cc_pin", PIN);
+  $("login").classList.add("hidden");
+  $("app").classList.remove("hidden");
+  setInterval(() => load().catch(() => {}), 10000);
+}
+
+$("login").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  PIN = $("pin").value.trim();
+  try { await unlock(); } catch (err) { $("login-error").textContent = err.message; }
+});
+
+$("rows").addEventListener("click", async (e) => {
+  if (e.target.dataset.bonus) { await api("/api/admin/bonus", { player_id: Number(e.target.dataset.bonus), rounds: 5 }); return load(); }
+  const id = e.target.dataset.award;
+  if (!id) return;
+  const prize = prompt("Prize to award (leave empty to clear):");
+  if (prize === null) return;
+  await api("/api/admin/award", { player_id: Number(id), prize });
+  load();
+});
+
+$("btn-draw").addEventListener("click", async () => {
+  try {
+    const r = await (await api("/api/admin/draw", { today_only: $("today-only").checked })).json();
+    const w = r.winner;
+    $("draw-result").innerHTML = `<p class="winner">${esc(w.full_name)}</p><p>${esc(w.nickname)} · ${esc(w.company || "no company")} · ${esc(w.email)}<br><span class="muted">Drawn from ${r.pool_size} eligible players.</span></p><button data-award="${w.id}" id="award-drawn">Award a prize to ${esc(w.nickname)}</button>`;
+    $("award-drawn").addEventListener("click", async () => {
+      const prize = prompt("Prize:", "Raffle prize");
+      if (prize) { await api("/api/admin/award", { player_id: w.id, prize }); load(); $("draw-result").innerHTML = `<p>Prize recorded for ${esc(w.full_name)}.</p>`; }
+    });
+  } catch (err) { $("draw-result").innerHTML = `<p class="error">${esc(err.message)}</p>`; }
+});
+
+async function download(scope) {
+  const res = await api(`/api/admin/export.csv?scope=${scope}`);
+  const blob = await res.blob();
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `card-clash-${scope}.csv`;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+$("btn-csv-all").addEventListener("click", () => download("all"));
+$("btn-csv-updates").addEventListener("click", () => download("updates"));
+
+$("btn-reset").addEventListener("click", async () => {
+  try { await api("/api/admin/reset", { confirm: $("confirm").value.trim() }); $("reset-msg").textContent = "All data deleted."; load(); }
+  catch (err) { $("reset-msg").textContent = err.message; }
+});
+
+if (PIN) unlock().catch(() => {});
+</script>
+</body>
+</html>

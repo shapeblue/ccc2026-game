@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leaderboard · CloudStack Card Clash</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=Barlow+Condensed:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="/style.css">
+<style>
+  body { font-size: clamp(16px, 1.4vw, 24px); }
+  .lb { display: grid; grid-template-columns: 1fr 1fr 0.9fr; gap: clamp(1.5rem, 3vw, 3.5rem); align-items: start; }
+  @media (max-width: 1100px) { .lb { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 700px) { .lb { grid-template-columns: 1fr; } }
+  .board-list { list-style: none; padding: 0; margin: 1rem 0 0; }
+  .logo-main img { height: 56px; }
+  .logo-partner img { height: 48px; max-width: 200px; }
+  .board-list li { display: grid; grid-template-columns: 2.2em 1fr auto; gap: 0.6em; align-items: baseline; padding: 0.45em 0; border-bottom: 1.5px solid var(--line); }
+  .board-list .pos { font: 700 1.6em/1 var(--display); color: var(--muted); }
+  .board-list li:first-child .pos { color: var(--partner); }
+  .board-list .nm { font: 600 1.35em/1.1 var(--display); }
+  .board-list .co { display: block; font-size: 0.75em; color: var(--muted); font-family: var(--body); font-weight: 400; }
+  .board-list .pts { font: 700 1.6em/1 var(--display); font-variant-numeric: tabular-nums; }
+  .join { background: var(--panel); border: 1.5px solid var(--line); border-top: 8px solid var(--ink); border-radius: 10px; padding: 1.2em; }
+  .join .url { font: 700 1.5em/1.15 var(--display); word-break: break-all; margin: 0.4em 0 1em; }
+  .stat strong { display: block; font: 700 2.6em/1 var(--display); }
+  .stats { display: flex; gap: 2em; margin-top: 1em; }
+  .board-list li.empty-lb { display: block; color: var(--muted); padding: 1em 0; }
+  .masthead .logo-main img { height: 52px; max-width: 260px; }
+</style>
+</head>
+<body>
+<div class="shell" style="max-width:1600px">
+  <header class="masthead"><div class="brand"><span class="logo-row" data-brand="main"></span><div class="wordmark">CloudStack Card Clash <span id="event"></span></div></div></header>
+  <div class="lb">
+    <section><h2>Today</h2><ol class="board-list" id="today"></ol></section>
+    <section><h2>All conference</h2><ol class="board-list" id="overall"></ol></section>
+    <aside class="join">
+      <h2>Play on your phone</h2>
+      <p class="muted" style="margin:0.4em 0 0">Connect to the booth Wi-Fi and open</p>
+      <div class="url" id="url"></div>
+      <p>Solve a CloudStack scenario in 150 seconds, then see if your design survives the incident. Top scores win prizes at the closing session.</p>
+      <div class="stats">
+        <div class="stat"><strong id="players">0</strong><small class="muted">players</small></div>
+        <div class="stat"><strong id="games">0</strong><small class="muted">clouds built</small></div>
+      </div>
+    </aside>
+  </div>
+  <footer class="partners" data-partners>
+    <p class="muted">With thanks to our partners</p>
+    <div class="logo-row" data-brand="partners"></div>
+  </footer>
+</div>
+<script src="/branding.js"></script>
+<script>
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const list = (rows) => rows.length
+  ? rows.map((r, i) => `<li><span class="pos">${i + 1}</span><span class="nm">${esc(r.nickname)}${r.company ? `<span class="co">${esc(r.company)}</span>` : ""}</span><span class="pts">${r.best}</span></li>`).join("")
+  : `<li class="empty-lb">No scores yet. Be the first.</li>`;
+async function refresh() {
+  try {
+    const d = await (await fetch("/api/leaderboard")).json();
+    document.getElementById("today").innerHTML = list(d.today);
+    document.getElementById("overall").innerHTML = list(d.overall);
+    document.getElementById("players").textContent = d.players;
+    document.getElementById("games").textContent = d.games;
+  } catch {}
+}
+fetch("/api/config").then((r) => r.json()).then((c) => {
+  document.getElementById("event").textContent = c.event;
+  document.getElementById("url").textContent = c.join_urls[0].replace(/^https?:\/\//, "");
+});
+refresh();
+setInterval(refresh, 5000);
+</script>
+</body>
+</html>
