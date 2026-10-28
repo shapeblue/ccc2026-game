@@ -1,0 +1,1557 @@
+{
+ "event": "CloudStack Collaboration Conference 2026",
+ "branding": {
+  "main": [
+   {
+    "name": "Apache CloudStack",
+    "src": "/logos/cloudstack.png"
+   },
+   {
+    "name": "ShapeBlue",
+    "src": "/logos/shapeblue.png"
+   }
+  ],
+  "partners": [
+   {
+    "name": "US Signal",
+    "src": "/logos/us-signal.png"
+   },
+   {
+    "name": "LINBIT",
+    "src": "/logos/linbit.png"
+   },
+   {
+    "name": "StorPool",
+    "src": "/logos/storpool.png"
+   },
+   {
+    "name": "Sendense",
+    "src": "/logos/sendense.png"
+   },
+   {
+    "name": "DIMSI",
+    "src": "/logos/dimsi.png"
+   },
+   {
+    "name": "systavo",
+    "src": "/logos/systavo.png"
+   },
+   {
+    "name": "Your.Online",
+    "src": "/logos/your-online.png"
+   },
+   {
+    "name": "Stack Console",
+    "src": "/logos/stack-console.png"
+   },
+   {
+    "name": "proIO",
+    "src": "/logos/proio.png"
+   },
+   {
+    "name": "weSystems",
+    "src": "/logos/wesystems.png"
+   }
+  ]
+ },
+ "shapeblue": {
+  "heading": "Building a real CloudStack cloud?",
+  "intro": "ShapeBlue designs, builds, migrates and supports Apache CloudStack clouds, and trains the teams that run them.",
+  "contact_url": "https://www.shapeblue.com/get-in-touch/",
+  "services": [
+   {
+    "id": "consulting",
+    "title": "CloudStack Consulting",
+    "url": "https://www.shapeblue.com/cloudstack-consulting/",
+    "text": "Architecture advice, proof-of-concept help and reviews of existing CloudStack clouds."
+   },
+   {
+    "id": "design",
+    "title": "IaaS Design and Build",
+    "url": "https://www.shapeblue.com/iaas-cloud-design-and-build/",
+    "text": "From requirements to a documented design and a deployed private or public cloud."
+   },
+   {
+    "id": "migration",
+    "title": "VMware Migration",
+    "url": "https://www.shapeblue.com/vmware-migration-to-apache-cloudstack/",
+    "text": "Move VMware workloads to Apache CloudStack and KVM."
+   },
+   {
+    "id": "training",
+    "title": "CloudStack Training",
+    "url": "https://www.shapeblue.com/cloudstack-training/",
+    "text": "A 4-day hands-on Bootcamp, with an optional certification exam."
+   },
+   {
+    "id": "support",
+    "title": "CloudStack Support",
+    "url": "https://www.shapeblue.com/support/",
+    "text": "Infrastructure support for production clouds, including emergency P1 help."
+   },
+   {
+    "id": "engineering",
+    "title": "CloudStack Software Engineering",
+    "url": "https://www.shapeblue.com/cloudstack-software-engineering/",
+    "text": "Custom features, integrations and fixes for CloudStack."
+   }
+  ],
+  "scenario_service": {
+   "sc-vmexit": "migration",
+   "sc-k8s": "engineering",
+   "sc-platform": "engineering"
+  },
+  "default_service": "design"
+ },
+ "learn": {
+  "guide_url": "https://cloudstack-illustrated-guide.netlify.app/",
+  "guide_title": "Bitsy and the Great Cloud Tree",
+  "docs_url": "https://docs.cloudstack.apache.org/en/4.23.0.0/",
+  "docs_title": "Apache CloudStack 4.23 documentation",
+  "chapters": {
+   "ch1": "Bitsy Needs a Whole House",
+   "ch3": "A Tour of the Great Cloud Tree",
+   "ch5": "How Many Rooms?",
+   "ch6": "The Chest and the Barn",
+   "ch8": "Vera and the Fenced Garden",
+   "ch10": "The Storm",
+   "ch11": "Fenced Neighborhoods",
+   "ch12": "The Jam Window",
+   "ch13": "The Acorn Allowance",
+   "ch14": "Tally's Night Rounds",
+   "ch15": "The Town Book and the Bell",
+   "ch16": "The Jam Rush",
+   "ch17": "The Stone Vault",
+   "ch19": "Writing to Monty",
+   "ch20": "Captain Kube Comes to Visit",
+   "ch21": "Who Sleeps Where",
+   "ch22": "Keys and Badges",
+   "ch23": "Movable Gates and Far-Away Fields"
+  },
+  "topics": {
+   "zone": {
+    "guide": "ch3",
+    "docs": "conceptsandterminology/network_setup.html"
+   },
+   "zone-core": {
+    "guide": "ch3",
+    "docs": "conceptsandterminology/network_setup.html"
+   },
+   "zone-advanced": {
+    "guide": "ch3",
+    "docs": "conceptsandterminology/network_setup.html"
+   },
+   "zone-basic": {
+    "guide": "ch3",
+    "docs": "conceptsandterminology/network_setup.html"
+   },
+   "edge": {
+    "guide": "ch3",
+    "docs": "conceptsandterminology/concepts.html"
+   },
+   "compute": {
+    "guide": "ch1",
+    "docs": "conceptsandterminology/choosing_deployment_architecture.html#choosing-a-hypervisor"
+   },
+   "kvm": {
+    "guide": "ch1",
+    "docs": "conceptsandterminology/choosing_deployment_architecture.html#choosing-a-hypervisor"
+   },
+   "vmware": {
+    "guide": "ch1",
+    "docs": "conceptsandterminology/choosing_deployment_architecture.html#choosing-a-hypervisor"
+   },
+   "xcp": {
+    "guide": "ch1",
+    "docs": "conceptsandterminology/choosing_deployment_architecture.html#choosing-a-hypervisor"
+   },
+   "open-hv": {
+    "guide": "ch1",
+    "docs": "conceptsandterminology/choosing_deployment_architecture.html#choosing-a-hypervisor"
+   },
+   "arm": {
+    "guide": null,
+    "docs": "adminguide/arch_types.html"
+   },
+   "gpu": {
+    "guide": null,
+    "docs": "adminguide/virtual_machines.html#assigning-gpu-vgpu-to-guest-instances"
+   },
+   "primary": {
+    "guide": "ch6",
+    "docs": "adminguide/storage.html#primary-storage"
+   },
+   "resilient-storage": {
+    "guide": "ch6",
+    "docs": "adminguide/reliability.html#primary-storage-outage-and-data-loss"
+   },
+   "secondary": {
+    "guide": "ch6",
+    "docs": "adminguide/storage.html#secondary-storage"
+   },
+   "object": {
+    "guide": null,
+    "docs": "adminguide/storage.html#object-storage"
+   },
+   "file-shares": {
+    "guide": null,
+    "docs": "adminguide/storage.html#shared-filesystems"
+   },
+   "encryption": {
+    "guide": null,
+    "docs": "adminguide/storage.html#working-with-volumes"
+   },
+   "qos": {
+    "guide": "ch5",
+    "docs": "adminguide/service_offerings.html#compute-and-disk-service-offerings"
+   },
+   "guest-net": {
+    "guide": "ch8",
+    "docs": "adminguide/networking_and_traffic.html"
+   },
+   "tenant-isolation": {
+    "guide": "ch8",
+    "docs": "adminguide/networking_and_traffic.html"
+   },
+   "vr": {
+    "guide": "ch8",
+    "docs": "adminguide/systemvm.html#virtual-router"
+   },
+   "vpc": {
+    "guide": "ch8",
+    "docs": "adminguide/networking_and_traffic.html#configuring-a-virtual-private-cloud"
+   },
+   "network-ha": {
+    "guide": "ch8",
+    "docs": "adminguide/systemvm.html#virtual-router"
+   },
+   "public-lb": {
+    "guide": "ch12",
+    "docs": "adminguide/networking_and_traffic.html#ip-load-balancing"
+   },
+   "internal-lb": {
+    "guide": "ch8",
+    "docs": "adminguide/networking_and_traffic.html#configuring-a-virtual-private-cloud"
+   },
+   "private-link": {
+    "guide": "ch8",
+    "docs": "adminguide/networking_and_traffic.html#configuring-a-virtual-private-cloud"
+   },
+   "vpn": {
+    "guide": "ch23",
+    "docs": "adminguide/networking_and_traffic.html#remote-access-vpn"
+   },
+   "ipv6": {
+    "guide": null,
+    "docs": "plugins/ipv6.html"
+   },
+   "routed": {
+    "guide": null,
+    "docs": "adminguide/networking_and_traffic.html#dynamic-and-static-routing"
+   },
+   "ids": {
+    "guide": "ch23",
+    "docs": "adminguide/networking/vnf_templates_appliances.html"
+   },
+   "k8s": {
+    "guide": "ch20",
+    "docs": "plugins/cloudstack-kubernetes-service.html"
+   },
+   "k8s-lb": {
+    "guide": "ch20",
+    "docs": "plugins/cloudstack-kubernetes-provider.html"
+   },
+   "k8s-volumes": {
+    "guide": "ch20",
+    "docs": "plugins/cloudstack-csi-driver.html"
+   },
+   "autoscale": {
+    "guide": "ch16",
+    "docs": "adminguide/autoscale_with_virtual_router.html"
+   },
+   "ha": {
+    "guide": "ch10",
+    "docs": "adminguide/reliability.html#ha-enabled-instances"
+   },
+   "balanced": {
+    "guide": "ch21",
+    "docs": "adminguide/clusters.html#cloudstack-drs"
+   },
+   "anti-affinity": {
+    "guide": "ch21",
+    "docs": "adminguide/deployment_planners.html"
+   },
+   "dedicated": {
+    "guide": null,
+    "docs": "adminguide/accounts.html#dedicating-resources-to-accounts-and-domains"
+   },
+   "backup": {
+    "guide": "ch17",
+    "docs": "adminguide/virtual_machines.html#instance-backups-backup-and-recovery-feature"
+   },
+   "dr": {
+    "guide": "ch3",
+    "docs": "conceptsandterminology/choosing_deployment_architecture.html#multi-site-deployment"
+   },
+   "migration": {
+    "guide": null,
+    "docs": "adminguide/virtual_machines.html#importing-virtual-machines-from-vmware-into-kvm"
+   },
+   "billing": {
+    "guide": "ch14",
+    "docs": "adminguide/usage.html"
+   },
+   "prepaid": {
+    "guide": "ch13",
+    "docs": "plugins/quota.html"
+   },
+   "multitenancy": {
+    "guide": "ch11",
+    "docs": "adminguide/accounts.html"
+   },
+   "rbac": {
+    "guide": "ch11",
+    "docs": "adminguide/accounts.html#using-dynamic-roles"
+   },
+   "sso": {
+    "guide": "ch22",
+    "docs": "adminguide/accounts.html#using-an-ldap-server-for-user-authentication"
+   },
+   "mfa": {
+    "guide": "ch22",
+    "docs": "adminguide/accounts.html#using-two-factor-authentication-for-users"
+   },
+   "iac": {
+    "guide": "ch19",
+    "docs": "https://github.com/apache/cloudstack-terraform-provider"
+   },
+   "monitoring": {
+    "guide": "ch15",
+    "docs": "adminguide/management.html#administrator-alerts"
+   },
+   "events": {
+    "guide": "ch15",
+    "docs": "adminguide/events.html"
+   }
+  }
+ },
+ "time_limit": 150,
+ "categories": [
+  {
+   "id": "zone",
+   "label": "Zones"
+  },
+  {
+   "id": "compute",
+   "label": "Compute"
+  },
+  {
+   "id": "storage",
+   "label": "Storage"
+  },
+  {
+   "id": "network",
+   "label": "Networking"
+  },
+  {
+   "id": "service",
+   "label": "Services"
+  }
+ ],
+ "tags": {
+  "zone": "a zone",
+  "zone-core": "an Advanced or Basic zone",
+  "zone-advanced": "an Advanced zone",
+  "zone-basic": "a Basic zone",
+  "edge": "Edge sites",
+  "compute": "Compute",
+  "kvm": "KVM hosts",
+  "vmware": "a VMware vSphere cluster",
+  "xcp": "an XCP-ng pool",
+  "open-hv": "Open-source hypervisor",
+  "primary": "Primary storage",
+  "resilient-storage": "Resilient shared storage",
+  "secondary": "Templates and snapshots",
+  "object": "S3-compatible object storage",
+  "guest-net": "Guest networking",
+  "tenant-isolation": "Tenant isolation",
+  "vr": "a network with a virtual router",
+  "vpc": "a VPC",
+  "network-ha": "Redundant routing",
+  "public-lb": "Public load balancing",
+  "vpn": "VPN connectivity",
+  "k8s": "Managed Kubernetes",
+  "autoscale": "Autoscaling",
+  "ha": "VM high availability",
+  "backup": "Backups",
+  "dr": "Disaster recovery site",
+  "migration": "VMware migration path",
+  "billing": "Usage billing",
+  "sso": "Corporate single sign-on",
+  "multitenancy": "Tenant accounts and domains",
+  "gpu": "GPU compute",
+  "arm": "ARM64 compute",
+  "balanced": "Automatic load balancing across hosts",
+  "anti-affinity": "VMs spread across hosts",
+  "dedicated": "Dedicated hardware",
+  "encryption": "Encrypted volumes",
+  "file-shares": "Shared file systems",
+  "qos": "Storage IOPS limits",
+  "ipv6": "IPv6",
+  "routed": "Routed networks with BGP",
+  "ids": "Intrusion detection",
+  "private-link": "Private link to on-premises",
+  "internal-lb": "Internal load balancing",
+  "k8s-lb": "Kubernetes LoadBalancer services",
+  "k8s-volumes": "Kubernetes persistent volumes",
+  "iac": "Infrastructure as code",
+  "monitoring": "Monitoring and alerting",
+  "events": "Event integrations",
+  "mfa": "Two-factor login",
+  "rbac": "Least-privilege roles",
+  "prepaid": "Spending limits per group"
+ },
+ "cards": [
+  {
+   "id": "z-adv",
+   "cat": "zone",
+   "name": "Advanced zone",
+   "cost": 4,
+   "requires": [],
+   "provides": [
+    "zone",
+    "zone-core",
+    "zone-advanced"
+   ],
+   "text": "The full network model: isolated networks, VPCs and shared networks."
+  },
+  {
+   "id": "z-basic",
+   "cat": "zone",
+   "name": "Basic zone",
+   "cost": 2,
+   "requires": [],
+   "provides": [
+    "zone",
+    "zone-core",
+    "zone-basic"
+   ],
+   "text": "One flat network with security groups. Simple and cheap, but no VPCs or virtual routers for tenants."
+  },
+  {
+   "id": "z-edge",
+   "cat": "zone",
+   "name": "Edge zone",
+   "cost": 2,
+   "requires": [],
+   "provides": [
+    "zone",
+    "edge"
+   ],
+   "text": "A lightweight KVM-only zone with no system VMs, for small remote sites."
+  },
+  {
+   "id": "z-second",
+   "cat": "zone",
+   "name": "Second zone (DR site)",
+   "cost": 8,
+   "requires": [
+    "zone-core"
+   ],
+   "provides": [
+    "dr"
+   ],
+   "text": "Another zone in a separate data centre, so a whole site can fail."
+  },
+  {
+   "id": "h-kvm",
+   "cat": "compute",
+   "name": "KVM hosts",
+   "cost": 4,
+   "requires": [
+    "zone"
+   ],
+   "provides": [
+    "compute",
+    "kvm",
+    "open-hv"
+   ],
+   "text": "Open-source and the most widely used hypervisor with CloudStack. Works in every zone type."
+  },
+  {
+   "id": "h-vmw",
+   "cat": "compute",
+   "name": "VMware vSphere cluster",
+   "cost": 9,
+   "requires": [
+    "zone-core"
+   ],
+   "provides": [
+    "compute",
+    "vmware"
+   ],
+   "text": "Familiar, mature and licensed per core. Not supported in Edge zones."
+  },
+  {
+   "id": "h-xcp",
+   "cat": "compute",
+   "name": "XCP-ng pool",
+   "cost": 5,
+   "requires": [
+    "zone-core"
+   ],
+   "provides": [
+    "compute",
+    "xcp",
+    "open-hv"
+   ],
+   "text": "Open-source Xen-based hypervisor. Not supported in Edge zones."
+  },
+  {
+   "id": "s-local",
+   "cat": "storage",
+   "name": "Local storage",
+   "cost": 1,
+   "requires": [
+    "compute"
+   ],
+   "provides": [
+    "primary"
+   ],
+   "text": "Disks inside each host. Cheapest and fast, but data is lost if the host is."
+  },
+  {
+   "id": "s-nfs",
+   "cat": "storage",
+   "name": "NFS primary storage",
+   "cost": 3,
+   "requires": [
+    "compute"
+   ],
+   "provides": [
+    "primary"
+   ],
+   "text": "Shared storage that every hypervisor understands. One NFS server is still one point of failure."
+  },
+  {
+   "id": "s-ceph",
+   "cat": "storage",
+   "name": "Ceph RBD",
+   "cost": 5,
+   "requires": [
+    "kvm"
+   ],
+   "provides": [
+    "primary",
+    "resilient-storage"
+   ],
+   "text": "Distributed, replicated block storage for KVM."
+  },
+  {
+   "id": "s-storpool",
+   "cat": "storage",
+   "name": "StorPool block storage",
+   "cost": 6,
+   "requires": [
+    "kvm"
+   ],
+   "provides": [
+    "primary",
+    "resilient-storage"
+   ],
+   "partner": "StorPool",
+   "text": "Partner card. High-performance, replicated block storage with a native CloudStack plugin for KVM."
+  },
+  {
+   "id": "s-linstor",
+   "cat": "storage",
+   "name": "LINSTOR",
+   "cost": 5,
+   "requires": [
+    "kvm"
+   ],
+   "provides": [
+    "primary",
+    "resilient-storage"
+   ],
+   "partner": "LINBIT",
+   "text": "Partner card. DRBD-replicated storage managed by LINSTOR, with a native CloudStack plugin for KVM."
+  },
+  {
+   "id": "s-vmfs",
+   "cat": "storage",
+   "name": "vSphere datastore",
+   "cost": 4,
+   "requires": [
+    "vmware"
+   ],
+   "provides": [
+    "primary"
+   ],
+   "text": "A VMFS or vSAN datastore presented to the vSphere cluster."
+  },
+  {
+   "id": "s-sec",
+   "cat": "storage",
+   "name": "NFS secondary storage",
+   "cost": 2,
+   "requires": [
+    "zone-core"
+   ],
+   "provides": [
+    "secondary"
+   ],
+   "text": "Holds templates, ISOs and volume snapshots. Edge zones download templates directly instead."
+  },
+  {
+   "id": "s-obj",
+   "cat": "storage",
+   "name": "Object storage",
+   "cost": 3,
+   "requires": [
+    "zone-core"
+   ],
+   "provides": [
+    "object"
+   ],
+   "text": "S3-compatible buckets for users, backed by MinIO or Ceph."
+  },
+  {
+   "id": "n-iso",
+   "cat": "network",
+   "name": "Isolated network",
+   "cost": 2,
+   "requires": [
+    "zone-advanced"
+   ],
+   "provides": [
+    "guest-net",
+    "tenant-isolation",
+    "vr"
+   ],
+   "text": "A private network per account, with a virtual router for NAT, DHCP, firewall and load balancing."
+  },
+  {
+   "id": "n-vpc",
+   "cat": "network",
+   "name": "VPC",
+   "cost": 3,
+   "requires": [
+    "zone-advanced"
+   ],
+   "provides": [
+    "guest-net",
+    "tenant-isolation",
+    "vr",
+    "vpc"
+   ],
+   "text": "Multi-tier private cloud network with ACLs between tiers."
+  },
+  {
+   "id": "n-sg",
+   "cat": "network",
+   "name": "Security groups",
+   "cost": 1,
+   "requires": [
+    "zone-basic"
+   ],
+   "provides": [
+    "guest-net",
+    "tenant-isolation"
+   ],
+   "text": "Per-VM firewall rules on a flat network."
+  },
+  {
+   "id": "n-shared",
+   "cat": "network",
+   "name": "Shared network",
+   "cost": 1,
+   "requires": [
+    "zone"
+   ],
+   "provides": [
+    "guest-net"
+   ],
+   "text": "One network shared by many accounts. Quick, but no isolation between tenants."
+  },
+  {
+   "id": "n-l2",
+   "cat": "network",
+   "name": "L2 network",
+   "cost": 1,
+   "requires": [
+    "zone"
+   ],
+   "provides": [
+    "guest-net"
+   ],
+   "text": "A plain VLAN with no CloudStack network services. Bring your own router."
+  },
+  {
+   "id": "n-rvr",
+   "cat": "network",
+   "name": "Redundant virtual router",
+   "cost": 2,
+   "requires": [
+    "vr"
+   ],
+   "provides": [
+    "network-ha"
+   ],
+   "text": "A second router in active-passive mode, so a router failure doesn't cut tenants off."
+  },
+  {
+   "id": "n-lb",
+   "cat": "network",
+   "name": "Load balancer rules",
+   "cost": 2,
+   "requires": [
+    "vr"
+   ],
+   "provides": [
+    "public-lb"
+   ],
+   "text": "Spread public traffic across VMs using the virtual router."
+  },
+  {
+   "id": "n-s2s",
+   "cat": "network",
+   "name": "Site-to-site VPN",
+   "cost": 2,
+   "requires": [
+    "vpc"
+   ],
+   "provides": [
+    "vpn"
+   ],
+   "text": "Link a VPC to an office or another data centre over IPsec."
+  },
+  {
+   "id": "n-ravpn",
+   "cat": "network",
+   "name": "Remote access VPN",
+   "cost": 1,
+   "requires": [
+    "vr"
+   ],
+   "provides": [
+    "vpn"
+   ],
+   "text": "Let individual users connect into their network."
+  },
+  {
+   "id": "x-cks",
+   "cat": "service",
+   "name": "CloudStack Kubernetes Service",
+   "cost": 4,
+   "requires": [
+    "vr",
+    "secondary"
+   ],
+   "provides": [
+    "k8s"
+   ],
+   "text": "Users deploy and scale Kubernetes clusters from the CloudStack UI or API."
+  },
+  {
+   "id": "x-autoscale",
+   "cat": "service",
+   "name": "AutoScale VM group",
+   "cost": 3,
+   "requires": [
+    "public-lb"
+   ],
+   "provides": [
+    "autoscale"
+   ],
+   "text": "Adds and removes VMs behind a load balancer as load changes."
+  },
+  {
+   "id": "x-hostha",
+   "cat": "service",
+   "name": "KVM Host HA",
+   "cost": 2,
+   "requires": [
+    "kvm"
+   ],
+   "provides": [
+    "ha"
+   ],
+   "text": "Detects failed hosts, fences them through out-of-band management and restarts their VMs elsewhere."
+  },
+  {
+   "id": "x-vsha",
+   "cat": "service",
+   "name": "vSphere HA",
+   "cost": 3,
+   "requires": [
+    "vmware"
+   ],
+   "provides": [
+    "ha"
+   ],
+   "text": "VMware's own HA restarts VMs on surviving hosts."
+  },
+  {
+   "id": "x-xcpha",
+   "cat": "service",
+   "name": "XCP-ng pool HA",
+   "cost": 2,
+   "requires": [
+    "xcp"
+   ],
+   "provides": [
+    "ha"
+   ],
+   "text": "The pool restarts protected VMs when a host fails."
+  },
+  {
+   "id": "x-nasbk",
+   "cat": "service",
+   "name": "NAS backup",
+   "cost": 2,
+   "requires": [
+    "kvm"
+   ],
+   "provides": [
+    "backup"
+   ],
+   "text": "CloudStack's built-in backup provider for KVM, writing to an NFS or CIFS share."
+  },
+  {
+   "id": "x-veeam",
+   "cat": "service",
+   "name": "Veeam backup",
+   "cost": 4,
+   "requires": [
+    "vmware"
+   ],
+   "provides": [
+    "backup"
+   ],
+   "text": "Backup and restore for VMware-based zones through the Veeam provider."
+  },
+  {
+   "id": "x-sendense",
+   "cat": "service",
+   "name": "Sendense",
+   "cost": 5,
+   "requires": [
+    "compute"
+   ],
+   "provides": [
+    "backup",
+    "migration"
+   ],
+   "partner": "Sendense",
+   "text": "Partner card. Backup, recovery and workload mobility across CloudStack and mixed infrastructure."
+  },
+  {
+   "id": "x-v2v",
+   "cat": "service",
+   "name": "VMware to KVM import",
+   "cost": 2,
+   "requires": [
+    "kvm"
+   ],
+   "provides": [
+    "migration"
+   ],
+   "text": "Built-in import of VMs from vCenter into KVM, converting them with virt-v2v."
+  },
+  {
+   "id": "x-usage",
+   "cat": "service",
+   "name": "Usage server",
+   "cost": 2,
+   "requires": [
+    "zone"
+   ],
+   "provides": [
+    "billing"
+   ],
+   "text": "Records resource usage per account so you can bill customers."
+  },
+  {
+   "id": "x-domains",
+   "cat": "service",
+   "name": "Domains and projects",
+   "cost": 1,
+   "requires": [],
+   "provides": [
+    "multitenancy"
+   ],
+   "text": "Organise customers into domains, accounts and projects with their own limits."
+  },
+  {
+   "id": "x-ldap",
+   "cat": "service",
+   "name": "LDAP / Active Directory",
+   "cost": 1,
+   "requires": [],
+   "provides": [
+    "sso"
+   ],
+   "text": "Users log in with their existing directory accounts."
+  },
+  {
+   "id": "x-saml",
+   "cat": "service",
+   "name": "SAML 2.0 single sign-on",
+   "cost": 1,
+   "requires": [],
+   "provides": [
+    "sso"
+   ],
+   "text": "Log in through the company identity provider."
+  },
+  {
+   "id": "h-gpu",
+   "cat": "compute",
+   "name": "GPU hosts",
+   "cost": 7,
+   "requires": [
+    "kvm"
+   ],
+   "provides": [
+    "gpu"
+   ],
+   "text": "KVM hosts with GPUs passed through to VMs, for AI training and virtual desktops."
+  },
+  {
+   "id": "h-arm",
+   "cat": "compute",
+   "name": "ARM64 KVM hosts",
+   "cost": 3,
+   "requires": [
+    "zone"
+   ],
+   "provides": [
+    "compute",
+    "kvm",
+    "open-hv",
+    "arm"
+   ],
+   "text": "Energy-efficient ARM servers running KVM, managed alongside x86 hosts."
+  },
+  {
+   "id": "h-drs",
+   "cat": "compute",
+   "name": "Cluster DRS",
+   "cost": 2,
+   "requires": [
+    "compute"
+   ],
+   "provides": [
+    "balanced"
+   ],
+   "text": "Live-migrates VMs to even out load across the hosts in a cluster."
+  },
+  {
+   "id": "h-aff",
+   "cat": "compute",
+   "name": "Host anti-affinity groups",
+   "cost": 1,
+   "requires": [
+    "compute"
+   ],
+   "provides": [
+    "anti-affinity"
+   ],
+   "text": "Keeps the VMs of a clustered app on different hosts."
+  },
+  {
+   "id": "h-ded",
+   "cat": "compute",
+   "name": "Dedicated hosts",
+   "cost": 3,
+   "requires": [
+    "compute"
+   ],
+   "provides": [
+    "dedicated"
+   ],
+   "text": "Reserves hosts or clusters for a single customer's VMs."
+  },
+  {
+   "id": "s-enc",
+   "cat": "storage",
+   "name": "Volume encryption",
+   "cost": 2,
+   "requires": [
+    "kvm",
+    "primary"
+   ],
+   "provides": [
+    "encryption"
+   ],
+   "text": "Encrypts VM disks at rest on KVM."
+  },
+  {
+   "id": "s-sfs",
+   "cat": "storage",
+   "name": "Shared file systems",
+   "cost": 3,
+   "requires": [
+    "guest-net",
+    "primary"
+   ],
+   "provides": [
+    "file-shares"
+   ],
+   "text": "Users create NFS shares on demand and mount them across their VMs."
+  },
+  {
+   "id": "s-qos",
+   "cat": "storage",
+   "name": "Disk offerings with IOPS limits",
+   "cost": 1,
+   "requires": [
+    "primary"
+   ],
+   "provides": [
+    "qos"
+   ],
+   "text": "Caps how much disk throughput each volume can use."
+  },
+  {
+   "id": "s-pflex",
+   "cat": "storage",
+   "name": "Dell PowerFlex",
+   "cost": 6,
+   "requires": [
+    "kvm"
+   ],
+   "provides": [
+    "primary",
+    "resilient-storage"
+   ],
+   "text": "Software-defined block storage managed through a CloudStack storage plugin."
+  },
+  {
+   "id": "n-ipv6",
+   "cat": "network",
+   "name": "IPv6 networks",
+   "cost": 2,
+   "requires": [
+    "vr"
+   ],
+   "provides": [
+    "ipv6"
+   ],
+   "text": "Gives isolated networks and VPC tiers public IPv6 addresses."
+  },
+  {
+   "id": "n-routed",
+   "cat": "network",
+   "name": "Routed mode with BGP",
+   "cost": 3,
+   "requires": [
+    "vr"
+   ],
+   "provides": [
+    "routed"
+   ],
+   "text": "Routes tenant networks directly without NAT, announcing them to your routers over BGP."
+  },
+  {
+   "id": "n-vnf",
+   "cat": "network",
+   "name": "VNF appliance",
+   "cost": 3,
+   "requires": [
+    "guest-net"
+   ],
+   "provides": [
+    "ids"
+   ],
+   "text": "Deploy a network function such as a Suricata intrusion-detection appliance from a template."
+  },
+  {
+   "id": "n-pgw",
+   "cat": "network",
+   "name": "VPC private gateway",
+   "cost": 2,
+   "requires": [
+    "vpc"
+   ],
+   "provides": [
+    "private-link"
+   ],
+   "text": "Connects a VPC to an on-premises network over a dedicated VLAN."
+  },
+  {
+   "id": "n-ilb",
+   "cat": "network",
+   "name": "Internal load balancer",
+   "cost": 2,
+   "requires": [
+    "vpc"
+   ],
+   "provides": [
+    "internal-lb"
+   ],
+   "text": "Balances traffic between tiers inside a VPC."
+  },
+  {
+   "id": "n-nsx",
+   "cat": "network",
+   "name": "VMware NSX",
+   "cost": 5,
+   "requires": [
+    "vmware",
+    "zone-advanced"
+   ],
+   "provides": [
+    "tenant-isolation",
+    "network-ha"
+   ],
+   "text": "SDN for VMware-based zones. Powerful, but it ties your network to VMware."
+  },
+  {
+   "id": "x-ccm",
+   "cat": "service",
+   "name": "CloudStack Kubernetes Provider",
+   "cost": 2,
+   "requires": [
+    "k8s",
+    "public-lb"
+   ],
+   "provides": [
+    "k8s-lb"
+   ],
+   "text": "Cloud controller manager that gives Kubernetes LoadBalancer services a CloudStack load balancer."
+  },
+  {
+   "id": "x-csi",
+   "cat": "service",
+   "name": "CloudStack CSI driver",
+   "cost": 2,
+   "requires": [
+    "k8s",
+    "primary"
+   ],
+   "provides": [
+    "k8s-volumes"
+   ],
+   "text": "Provisions CloudStack volumes as Kubernetes persistent volumes."
+  },
+  {
+   "id": "x-capc",
+   "cat": "service",
+   "name": "Cluster API Provider (CAPC)",
+   "cost": 3,
+   "requires": [
+    "vr",
+    "secondary"
+   ],
+   "provides": [
+    "k8s"
+   ],
+   "text": "Creates and upgrades Kubernetes clusters declaratively with Cluster API."
+  },
+  {
+   "id": "x-tf",
+   "cat": "service",
+   "name": "Terraform provider",
+   "cost": 1,
+   "requires": [],
+   "provides": [
+    "iac"
+   ],
+   "text": "Define zones, networks and VMs as code and rebuild them on demand."
+  },
+  {
+   "id": "x-prom",
+   "cat": "service",
+   "name": "Prometheus exporter",
+   "cost": 1,
+   "requires": [
+    "zone"
+   ],
+   "provides": [
+    "monitoring"
+   ],
+   "text": "Exposes capacity and health metrics for dashboards and alerts."
+  },
+  {
+   "id": "x-hooks",
+   "cat": "service",
+   "name": "Webhooks",
+   "cost": 1,
+   "requires": [],
+   "provides": [
+    "events"
+   ],
+   "text": "Sends CloudStack events to ticketing, chat and automation tools."
+  },
+  {
+   "id": "x-2fa",
+   "cat": "service",
+   "name": "Two-factor authentication",
+   "cost": 1,
+   "requires": [],
+   "provides": [
+    "mfa"
+   ],
+   "text": "Users confirm logins with a time-based code."
+  },
+  {
+   "id": "x-oauth",
+   "cat": "service",
+   "name": "OAuth2 login",
+   "cost": 1,
+   "requires": [],
+   "provides": [
+    "sso"
+   ],
+   "text": "Log in with an existing Google or GitHub account."
+  },
+  {
+   "id": "x-roles",
+   "cat": "service",
+   "name": "Custom roles",
+   "cost": 1,
+   "requires": [
+    "multitenancy"
+   ],
+   "provides": [
+    "rbac"
+   ],
+   "text": "Give each user only the API permissions their job needs."
+  },
+  {
+   "id": "x-quota",
+   "cat": "service",
+   "name": "Quota",
+   "cost": 1,
+   "requires": [
+    "billing"
+   ],
+   "provides": [
+    "prepaid"
+   ],
+   "text": "Sets credit limits per account and stops spending when they run out."
+  }
+ ],
+ "scenarios": [
+  {
+   "id": "sc-saas",
+   "title": "SaaS launch",
+   "budget": 24,
+   "brief": "A start-up is launching a web platform next month. Each tenant needs a private network, and traffic will spike after the press release.",
+   "requires": [
+    "compute",
+    "primary",
+    "secondary",
+    "tenant-isolation",
+    "public-lb",
+    "autoscale"
+   ],
+   "incidents": [
+    "traffic-spike",
+    "router-failure",
+    "host-failure"
+   ]
+  },
+  {
+   "id": "sc-vmexit",
+   "title": "VMware exit",
+   "budget": 22,
+   "brief": "2,000 VMs, and the vSphere licence renewal is in 90 days. Move everything to an open-source hypervisor without losing HA or backups.",
+   "requires": [
+    "compute",
+    "open-hv",
+    "migration",
+    "primary",
+    "secondary",
+    "ha",
+    "backup"
+   ],
+   "incidents": [
+    "host-failure",
+    "ransomware",
+    "storage-failure"
+   ]
+  },
+  {
+   "id": "sc-hosting",
+   "title": "Hosting provider public cloud",
+   "budget": 26,
+   "brief": "A regional hosting company wants self-service VMs for hundreds of tenants, billed monthly, with no single router taking a tenant offline.",
+   "requires": [
+    "compute",
+    "primary",
+    "secondary",
+    "tenant-isolation",
+    "multitenancy",
+    "billing",
+    "public-lb",
+    "network-ha"
+   ],
+   "incidents": [
+    "router-failure",
+    "host-failure",
+    "storage-failure"
+   ]
+  },
+  {
+   "id": "sc-bank",
+   "title": "Sovereign cloud for a bank",
+   "budget": 38,
+   "brief": "Data must stay in-country on open infrastructure. Auditors want a second site, backups, staff logging in with corporate accounts, and a secure link to head office.",
+   "requires": [
+    "compute",
+    "open-hv",
+    "primary",
+    "resilient-storage",
+    "secondary",
+    "ha",
+    "backup",
+    "dr",
+    "sso",
+    "vpn"
+   ],
+   "incidents": [
+    "site-outage",
+    "ransomware",
+    "host-failure",
+    "storage-failure"
+   ]
+  },
+  {
+   "id": "sc-k8s",
+   "title": "Kubernetes platform",
+   "budget": 28,
+   "brief": "The platform team wants developers to create their own Kubernetes clusters on isolated networks, publish apps, and store artefacts in S3 buckets.",
+   "requires": [
+    "compute",
+    "primary",
+    "secondary",
+    "tenant-isolation",
+    "k8s",
+    "public-lb",
+    "object"
+   ],
+   "incidents": [
+    "traffic-spike",
+    "host-failure",
+    "router-failure"
+   ]
+  },
+  {
+   "id": "sc-edge",
+   "title": "Retail edge rollout",
+   "budget": 13,
+   "brief": "Two small servers in each of 200 shops, managed centrally. Staff log in with head-office accounts and the till data must be backed up.",
+   "requires": [
+    "edge",
+    "compute",
+    "open-hv",
+    "primary",
+    "guest-net",
+    "sso",
+    "backup"
+   ],
+   "incidents": [
+    "ransomware",
+    "host-failure"
+   ]
+  },
+  {
+   "id": "sc-ai",
+   "title": "AI research lab",
+   "budget": 33,
+   "brief": "A university wants GPU machines for its research groups, shared datasets every VM can mount, and a spending limit per group so no lab burns the whole grant.",
+   "requires": [
+    "compute",
+    "gpu",
+    "primary",
+    "secondary",
+    "file-shares",
+    "multitenancy",
+    "prepaid"
+   ],
+   "incidents": [
+    "noisy-neighbour",
+    "host-failure",
+    "silent-degradation"
+   ]
+  },
+  {
+   "id": "sc-platform",
+   "title": "Platform engineering team",
+   "budget": 31,
+   "brief": "Developers want Kubernetes clusters with working LoadBalancer services and persistent volumes. Everything must be defined as code and monitored.",
+   "requires": [
+    "compute",
+    "primary",
+    "secondary",
+    "k8s",
+    "k8s-lb",
+    "k8s-volumes",
+    "iac",
+    "monitoring"
+   ],
+   "incidents": [
+    "rebuild-rush",
+    "silent-degradation",
+    "traffic-spike"
+   ]
+  },
+  {
+   "id": "sc-telco",
+   "title": "Telco network cloud",
+   "budget": 26,
+   "brief": "A mobile operator is running out of IPv4 addresses. Its network functions need IPv6, intrusion detection on subscriber traffic, and no single router outage.",
+   "requires": [
+    "compute",
+    "open-hv",
+    "primary",
+    "secondary",
+    "tenant-isolation",
+    "ipv6",
+    "ids",
+    "network-ha"
+   ],
+   "incidents": [
+    "ipv4-exhaustion",
+    "intrusion",
+    "router-failure"
+   ]
+  },
+  {
+   "id": "sc-health",
+   "title": "Hospital group",
+   "budget": 27,
+   "brief": "Patient records need encrypted disks on hardware no one else shares. Staff need two-factor login and only the access their role requires. Downtime is not an option.",
+   "requires": [
+    "compute",
+    "primary",
+    "secondary",
+    "encryption",
+    "dedicated",
+    "mfa",
+    "rbac",
+    "backup",
+    "ha"
+   ],
+   "incidents": [
+    "phishing",
+    "ransomware",
+    "host-failure",
+    "noisy-neighbour"
+   ]
+  }
+ ],
+ "incidents": {
+  "host-failure": {
+   "title": "A host loses power at 3 a.m.",
+   "counter": [
+    "ha"
+   ],
+   "win": "HA restarted the VMs on other hosts before anyone woke up.",
+   "lose": "VMs stayed down until someone restarted them by hand. VM high availability would have recovered them."
+  },
+  "storage-failure": {
+   "title": "A storage server fails",
+   "counter": [
+    "resilient-storage"
+   ],
+   "win": "Replicated storage kept every volume online.",
+   "lose": "Volumes on the failed server went offline. Replicated storage such as Ceph, StorPool or LINSTOR keeps a copy elsewhere."
+  },
+  "ransomware": {
+   "title": "Ransomware encrypts a tenant's VMs",
+   "counter": [
+    "backup"
+   ],
+   "win": "You restored last night's backups and the tenant was back in an hour.",
+   "lose": "With no backups, the data was gone. A backup provider would have saved it."
+  },
+  "site-outage": {
+   "title": "The whole data centre goes dark",
+   "counter": [
+    "dr"
+   ],
+   "win": "Workloads came back in the second zone.",
+   "lose": "Everything was down until the site came back. A second zone gives you somewhere to recover to."
+  },
+  "traffic-spike": {
+   "title": "Traffic jumps tenfold overnight",
+   "counter": [
+    "autoscale"
+   ],
+   "win": "The AutoScale group added VMs and the site stayed fast.",
+   "lose": "The site slowed to a crawl. An AutoScale VM group would have added capacity."
+  },
+  "router-failure": {
+   "title": "A virtual router crashes",
+   "counter": [
+    "network-ha"
+   ],
+   "win": "The standby router took over within seconds.",
+   "lose": "Tenants lost connectivity until the router was rebuilt. A redundant virtual router avoids that."
+  },
+  "noisy-neighbour": {
+   "title": "One tenant's VM hammers the shared disks",
+   "counter": [
+    "qos",
+    "balanced",
+    "dedicated"
+   ],
+   "win": "IOPS limits, rebalancing or dedicated hardware kept everyone else fast.",
+   "lose": "Every other VM slowed down. IOPS limits, Cluster DRS or dedicated hosts would have contained it."
+  },
+  "intrusion": {
+   "title": "An attacker scans tenant networks",
+   "counter": [
+    "ids"
+   ],
+   "win": "The intrusion-detection appliance flagged the scan and the source was blocked.",
+   "lose": "Nobody noticed until a tenant complained. An intrusion-detection VNF would have caught it."
+  },
+  "phishing": {
+   "title": "An admin's password is phished",
+   "counter": [
+    "mfa"
+   ],
+   "win": "Without the second factor, the stolen password was useless.",
+   "lose": "The attacker logged straight in. Two-factor authentication would have stopped them."
+  },
+  "ipv4-exhaustion": {
+   "title": "The last public IPv4 block is used up",
+   "counter": [
+    "ipv6",
+    "routed"
+   ],
+   "win": "New services came up on IPv6 and routed networks, with no new IPv4 needed.",
+   "lose": "New services had to wait for addresses. IPv6 or routed networks avoid the squeeze."
+  },
+  "rebuild-rush": {
+   "title": "50 test environments must be rebuilt by Friday",
+   "counter": [
+    "iac"
+   ],
+   "win": "Terraform rebuilt them all overnight.",
+   "lose": "The team clicked through the UI all week. Infrastructure as code would have done it in minutes."
+  },
+  "silent-degradation": {
+   "title": "Disk latency creeps up for a week",
+   "counter": [
+    "monitoring"
+   ],
+   "win": "An alert fired on day one and the failing disk was replaced.",
+   "lose": "Nobody noticed until users complained. Monitoring would have warned you early."
+  }
+ },
+ "scoring": {
+  "per_requirement": 100,
+  "all_met_bonus": 150,
+  "per_budget_left": 10,
+  "per_second_left": 2,
+  "inactive_card_penalty": 25,
+  "incident_bonus": 100
+ },
+ "daily_round_limit": 5
+}
