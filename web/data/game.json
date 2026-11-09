@@ -104,7 +104,7 @@
   "default_service": "design"
  },
  "learn": {
-  "guide_url": "https://cloudstack-illustrated-guide.netlify.app/",
+  "guide_url": "https://cloudstack-illustrated-guide.shapeblue.com/",
   "guide_title": "Bitsy and the Great Cloud Tree",
   "docs_url": "https://docs.cloudstack.apache.org/en/4.23.0.0/",
   "docs_title": "Apache CloudStack 4.23 documentation",

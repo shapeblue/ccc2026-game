@@ -22,6 +22,8 @@
   .board-list .pts { font: 700 1.6em/1 var(--display); font-variant-numeric: tabular-nums; }
   .join { background: var(--panel); border: 1.5px solid var(--line); border-top: 8px solid var(--ink); border-radius: 10px; padding: 1.2em; }
   .join .url { font: 700 1.5em/1.15 var(--display); word-break: break-all; margin: 0.4em 0 1em; }
+  .join .join-qr { background: #fff; padding: 0.5em; border-radius: 8px; width: min(220px, 100%); margin: 0 0 1em; }
+  .join .join-qr svg { display: block; width: 100%; height: auto; }
   .stat strong { display: block; font: 700 2.6em/1 var(--display); }
   .stats { display: flex; gap: 2em; margin-top: 1em; }
   .board-list li.empty-lb { display: block; color: var(--muted); padding: 1em 0; }
@@ -36,8 +38,9 @@
     <section><h2>All conference</h2><ol class="board-list" id="overall"></ol></section>
     <aside class="join">
       <h2>Play on your phone</h2>
-      <p class="muted" style="margin:0.4em 0 0">Connect to the booth Wi-Fi and open</p>
+      <p class="muted" style="margin:0.4em 0 0">Scan the code or open</p>
       <div class="url" id="url"></div>
+      <div class="join-qr" id="join-qr"></div>
       <p>Solve a CloudStack scenario in 150 seconds, then see if your design survives the incident. Top scores win prizes at the closing session.</p>
       <div class="stats">
         <div class="stat"><strong id="players">0</strong><small class="muted">players</small></div>
@@ -51,6 +54,7 @@
   </footer>
 </div>
 <script src="/branding.js"></script>
+<script src="/vendor/qrcode.js"></script>
 <script>
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const list = (rows) => rows.length
@@ -67,7 +71,12 @@ async function refresh() {
 }
 fetch("/api/config").then((r) => r.json()).then((c) => {
   document.getElementById("event").textContent = c.event;
-  document.getElementById("url").textContent = c.join_urls[0].replace(/^https?:\/\//, "");
+  const joinUrl = c.join_urls[0];
+  document.getElementById("url").textContent = joinUrl.replace(/^https?:\/\//, "").replace(/\/$/, "");
+  if (typeof qrcode === "function") {
+    const qr = qrcode(0, "M"); qr.addData(joinUrl); qr.make();
+    document.getElementById("join-qr").innerHTML = qr.createSvgTag({ cellSize: 4, margin: 2, scalable: true });
+  }
 });
 refresh();
 setInterval(refresh, 5000);
