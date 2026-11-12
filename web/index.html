@@ -56,7 +56,7 @@
         <div class="field"><label class="check"><input id="f-rules" type="checkbox"> <span>I agree to the game rules, to my leaderboard name being shown on screen, and to being contacted if I win a prize.</span></label></div>
         <div class="field"><label class="check"><input id="f-updates" type="checkbox"> <span>Send me occasional Apache CloudStack community and event news. Optional.</span></label></div>
         <p class="error" id="register-error" role="alert"></p>
-        <button type="submit">Start playing</button>
+        <div class="actions" style="margin-top:0"><button type="submit">Start playing</button><a class="button-link" href="/leaderboard" target="_blank" rel="noopener">View leaderboard</a></div>
       </form>
       </div>
     </div>
@@ -66,7 +66,7 @@
   <section id="screen-done" class="hidden">
     <h1>That's all for today</h1>
     <p id="done-text" style="font-size:1.2rem;margin-top:0.8rem"></p>
-    <div class="actions"><button id="btn-done-new">New game</button></div>
+    <div class="actions"><button id="btn-done-new">New game</button><a class="button-link" href="/leaderboard" target="_blank" rel="noopener">View leaderboard</a></div>
   </section>
 
   <!-- Briefing -->
@@ -131,6 +131,7 @@
         <div class="actions">
           <button id="btn-again">Play another scenario</button>
           <button class="secondary" id="btn-next">New game</button>
+          <a class="button-link" href="/leaderboard" target="_blank" rel="noopener">View leaderboard</a>
         </div>
         <div class="sb-panel" id="res-sb"></div>
       </div>

@@ -66,6 +66,18 @@ button {
 }
 button.secondary { background: transparent; color: var(--ink); }
 button:disabled { opacity: 0.45; cursor: not-allowed; }
+.button-link {
+  display: inline-block;
+  font: 600 1.05rem var(--display);
+  letter-spacing: 0.02em;
+  border: 2px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  padding: 0.6em 1.3em;
+  border-radius: 6px;
+  text-decoration: none;
+}
+.button-link:hover { background: var(--ink); color: var(--paper); }
 
 input, select {
   font: inherit;
